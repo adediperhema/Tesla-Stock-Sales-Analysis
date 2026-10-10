@@ -49,7 +49,7 @@ For the five most common Tesla models:
 
 > Excel was used for quick and efficient pre-processing before loading data into Power BI.
 
-![yoo mee](https://github.com/user-attachments/assets/17746245-9132-4077-8da6-64941244dafc)
+<img width="1387" height="607" alt="Tesla Sales Table Image 1" src="https://github.com/user-attachments/assets/d2fa12e9-7ac2-4da8-a0c0-99e03f1ae346" />
 
 
 
@@ -113,15 +113,20 @@ Each Tesla model has a dedicated dashboard featuring the following key visuals:
 - Average Price by Driver Assist System (DAS)  
 - 3D Vehicle View (UI/UX enhancement)
 
-![cyber truck dashboard](https://github.com/user-attachments/assets/56e1b3af-ebdb-4aeb-9ea8-b0e65f69ae5c)
+<img width="1247" height="737" alt="Tesla Sales Image 2" src="https://github.com/user-attachments/assets/88be3677-d477-4e37-84d0-864442a7ec7e" />
 
-![modep s](https://github.com/user-attachments/assets/a7a29b17-7f0d-4763-ad5b-c4731fad2908)
 
-![model 3 dashboard](https://github.com/user-attachments/assets/cbe5a9f2-7601-4adb-b063-d5eeb02bf45a)
+<img width="1247" height="737" alt="Tesla Sales Image 3" src="https://github.com/user-attachments/assets/023327cb-e454-488d-8599-e9556f857510" />
 
-![model x dashboard](https://github.com/user-attachments/assets/f3409ee2-8347-4a86-92da-971011239a3c)
 
-![model y](https://github.com/user-attachments/assets/c7567f61-9a0a-4c38-b835-32f0261c7d48)
+<img width="1247" height="736" alt="Tesla Sales Image 4" src="https://github.com/user-attachments/assets/008ac1f6-46fb-477b-a4d6-8788e479cfcf" />
+
+
+<img width="1251" height="735" alt="Tesla Sales Image 5" src="https://github.com/user-attachments/assets/4b2890ac-4e7c-405f-8466-7c9cb4dbc7c5" />
+
+
+<img width="1250" height="737" alt="Tesla Sales Image 6" src="https://github.com/user-attachments/assets/d7dd8f36-d376-4bfa-b97a-9ebc662fab04" />
+
 
 
 ---
