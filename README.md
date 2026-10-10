@@ -10,7 +10,7 @@ Power BI + Excel Dashboard Project | 5 Tesla Models | State-wise Sales Insights
 * [Power BI Dashboard](#power-bi-dashboard)  
 * [Insights & Findings](#insights--findings)  
 * [Recommendations](#recommendations) 
-* [Future Work](#future-work)
+
 
 ---
 
