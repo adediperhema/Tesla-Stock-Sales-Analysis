@@ -1,312 +1,155 @@
-\# 🚘 Tesla Stock Sales Analysis 
-
+# 🚘 Tesla Stock Sales Analysis 
 Power BI + Excel Dashboard Project | 5 Tesla Models | State-wise Sales Insights  
 
+## 📚 Table of Contents  
+* [Project Overview](#project-overview)  
+* [Tools & Technologies](#tools--technologies)  
+* [Excel for Data Formatting & Pre-Processing](#excel-for-data-formatting--pre-processing)  
+* [Dataset Breakdown](#dataset-breakdown)  
+* [Data Transformation](#data-transformation)  
+* [Power BI Dashboard](#power-bi-dashboard)  
+* [Insights & Findings](#insights--findings)  
+* [Recommendations](#recommendations) 
+* [Future Work](#future-work)
 
+---
 
-\## 📚 Table of Contents  
-
-\* \[Project Overview](#project-overview)  
-
-\* \[Tools \& Technologies](#tools--technologies)  
-
-\* \[Excel for Data Formatting \& Pre-Processing](#excel-for-data-formatting--pre-processing)  
-
-\* \[Dataset Breakdown](#dataset-breakdown)  
-
-\* \[Data Transformation](#data-transformation)  
-
-\* \[Power BI Dashboard](#power-bi-dashboard)  
-
-\* \[Insights \& Findings](#insights--findings)  
-
-\* \[Recommendations](#recommendations) 
-
-\* \[Future Work](#future-work)
-
-
-
-\---
-
-
-
-\### Project Overview  
-
-This project explores \*\*state-wise stock sales data\*\* for used Tesla vehicles across the U.S., leveraging \*\*Power BI dashboards\*\* to compare model performance, price trends, mileage, and accident history.
-
-
+### Project Overview  
+This project explores **state-wise stock sales data** for used Tesla vehicles across the U.S., leveraging **Power BI dashboards** to compare model performance, price trends, mileage, and accident history.
 
 The goal is to extract insights into:
-
-\- Average pricing  
-
-\- Odometer readings  
-
-\- Regional market trends  
-
-
+- Average pricing  
+- Odometer readings  
+- Regional market trends  
 
 For the five most common Tesla models:
+- Model 3  
+- Model Y  
+- Model S  
+- Model X  
+- Cybertruck
 
-\- Model 3  
+---
 
-\- Model Y  
-
-\- Model S  
-
-\- Model X  
-
-\- Cybertruck
-
-
-
-\---
-
+### Tools & Technologies  
+- Microsoft Power BI (for dashboard creation)  
+- Excel (data formatting & pre-processing)  
+- Power Query (ETL in Power BI)  
+- DAX (measures and KPIs)  
 
 
-\### Tools \& Technologies  
+---
 
-\- Microsoft Power BI (for dashboard creation)  
+### Excel for Data Formatting & Pre-Processing  
 
-\- Excel (data formatting \& pre-processing)  
-
-\- Power Query (ETL in Power BI)  
-
-\- DAX (measures and KPIs)  
-
-
-
-
-
-\---
-
-
-
-\### Excel for Data Formatting \& Pre-Processing  
-
-
-
-\- Cleaned missing values and duplicates  
-
-\- Formatted numeric fields (e.g., price, mileage, EMI)  
-
-\- Standardized column names and categories  
-
-\- Created calculated fields. 
-
-
+- Cleaned missing values and duplicates  
+- Formatted numeric fields (e.g., price, mileage, EMI)  
+- Standardized column names and categories  
+- Created calculated fields. 
 
 > Excel was used for quick and efficient pre-processing before loading data into Power BI.
 
-
-
-!\[yoo mee](https://github.com/user-attachments/assets/17746245-9132-4077-8da6-64941244dafc)
-
+![yoo mee](https://github.com/user-attachments/assets/17746245-9132-4077-8da6-64941244dafc)
 
 
 
-
-
-
-\### Dataset Breakdown  
-
+### Dataset Breakdown  
 The dataset used for this analysis includes:
-
-\- Tesla model name  
-
-\- Average price (USD)  
-
-\- Median odometer (miles)  
-
-\- EMI (Estimated Monthly Installment)  
-
-\- State of sale  
-
-\- Accident history (% with or without)  
-
-\- Driver Assist System type:
-
-&#x20; - Full Self-Driving (FSD)  
-
-&#x20; - Enhanced Autopilot  
-
-&#x20; - Standard Autopilot  
-
-
+- Tesla model name  
+- Average price (USD)  
+- Median odometer (miles)  
+- EMI (Estimated Monthly Installment)  
+- State of sale  
+- Accident history (% with or without)  
+- Driver Assist System type:
+  - Full Self-Driving (FSD)  
+  - Enhanced Autopilot  
+  - Standard Autopilot  
 
 Each vehicle record was filtered and grouped to compute KPIs across states.
 
+---
 
+### Data Transformation  
+Using **Power Query** and **DAX**, the data was transformed to calculate:  
+- Average price per model/state
+```
+Average Price = AVERAGE('Tesla Stock Dataset'[price])
+```
 
-\---
+- Median mileage (odometer)
+```
+Median Odometer = MEDIAN('Tesla Stock Dataset'[odometer])
+```
 
-
-
-\### Data Transformation  
-
-Using \*\*Power Query\*\* and \*\*DAX\*\*, the data was transformed to calculate:  
-
-\- Average price per model/state
+- EMI estimates
+```
+Average_EMI = AVERAGE('Tesla Stock Dataset'[EMI])
 
 ```
 
-Average Price = AVERAGE('Tesla Stock Dataset'\[price])
-
+- Accident percentage
+```
+PercentWithAccident = [With Accident]/ SUM('Tesla Stock Dataset'[accident_history] * 100
 ```
 
-
-
-\- Median mileage (odometer)
-
+- Percent With No Accident
 ```
-
-Median Odometer = MEDIAN('Tesla Stock Dataset'\[odometer])
-
-```
-
-
-
-\- EMI estimates
-
-```
-
-Average\_EMI = AVERAGE('Tesla Stock Dataset'\[EMI])
-
-
-
-```
-
-
-
-\- Accident percentage
-
-```
-
-PercentWithAccident = \[With Accident]/ SUM('Tesla Stock Dataset'\[accident\_history] \* 100
-
-```
-
-
-
-\- Percent With No Accident
-
-```
-
-PercentNoAccident = \[Without Accident]/ SUM('Tesla Stock Dataset'\[accident\_history] \* 100
-
+PercentNoAccident = [Without Accident]/ SUM('Tesla Stock Dataset'[accident_history] * 100
 ``` 
-
-
 
 Visuals were color-coded by driver assist systems and filtered by model.
 
+---
 
-
-\---
-
-
-
-\### Power BI Dashboard  
-
+### Power BI Dashboard  
 Each Tesla model has a dedicated dashboard featuring the following key visuals:
+- Average Price  
+- Median Odometer  
+- EMI  
+- % With/Without Accident  
+- Price by State  
+- Mileage by State  
+- Average Price by Driver Assist System (DAS)  
+- 3D Vehicle View (UI/UX enhancement)
 
-\- Average Price  
+![cyber truck dashboard](https://github.com/user-attachments/assets/56e1b3af-ebdb-4aeb-9ea8-b0e65f69ae5c)
 
-\- Median Odometer  
+![modep s](https://github.com/user-attachments/assets/a7a29b17-7f0d-4763-ad5b-c4731fad2908)
 
-\- EMI  
+![model 3 dashboard](https://github.com/user-attachments/assets/cbe5a9f2-7601-4adb-b063-d5eeb02bf45a)
 
-\- % With/Without Accident  
+![model x dashboard](https://github.com/user-attachments/assets/f3409ee2-8347-4a86-92da-971011239a3c)
 
-\- Price by State  
+![model y](https://github.com/user-attachments/assets/c7567f61-9a0a-4c38-b835-32f0261c7d48)
 
-\- Mileage by State  
 
-\- Average Price by Driver Assist System (DAS)  
+---
 
-\- 3D Vehicle View (UI/UX enhancement)
+### Insights & Findings  
+1. **Model Y** is the most affordable option at ~$33.9K with the lowest EMI ($529.37).  
+2. **Model X** has the highest average price and EMI, making it the most premium used Tesla option.  
+3. **Model 3** is the most balanced in terms of price vs. mileage.  
+4. **Cybertruck** data suggests it's new to the market (lower mileage) but priced mid-range.  
+5. **States like NY, OH, NC, VA** appear across the top for mileage, suggesting high usage or resales.  
+6. **Accident-free rate** is high across all models, with **Model 3 and Y** being the safest (>90%).
 
+---
 
+### Recommendations  
 
-!\[cyber truck dashboard](https://github.com/user-attachments/assets/56e1b3af-ebdb-4aeb-9ea8-b0e65f69ae5c)
+#### 1. 🎯 Target High-Volume States  
+Focus marketing and resale efforts in states like **NY, OH, NC, VA**, which show high vehicle turnover and mileage demand.
 
+#### 2. 💼 Price Based on DAS  
+Use **Driver Assist System tiers** as a pricing lever.  
+> Full Self-Driving variants command significantly higher average prices (up to **$63.2K**).
 
+#### 3. 📉 Promote Lower EMI Models  
+**Model Y and Model 3** with lower EMIs may be ideal for entry-level EV buyers or fleet purchases.
 
-!\[modep s](https://github.com/user-attachments/assets/a7a29b17-7f0d-4763-ad5b-c4731fad2908)
+#### 4. 🔍 Expand Dataset for Model Y & Cybertruck  
+As newer models, their datasets will grow. Monitoring pricing trends can help forecast **depreciation** and **resale value**.
 
-
-
-!\[model 3 dashboard](https://github.com/user-attachments/assets/cbe5a9f2-7601-4adb-b063-d5eeb02bf45a)
-
-
-
-!\[model x dashboard](https://github.com/user-attachments/assets/f3409ee2-8347-4a86-92da-971011239a3c)
-
-
-
-!\[model y](https://github.com/user-attachments/assets/c7567f61-9a0a-4c38-b835-32f0261c7d48)
-
-
-
-
-
-\---
-
-
-
-\### Insights \& Findings  
-
-1\. \*\*Model Y\*\* is the most affordable option at \~$33.9K with the lowest EMI ($529.37).  
-
-2\. \*\*Model X\*\* has the highest average price and EMI, making it the most premium used Tesla option.  
-
-3\. \*\*Model 3\*\* is the most balanced in terms of price vs. mileage.  
-
-4\. \*\*Cybertruck\*\* data suggests it's new to the market (lower mileage) but priced mid-range.  
-
-5\. \*\*States like NY, OH, NC, VA\*\* appear across the top for mileage, suggesting high usage or resales.  
-
-6\. \*\*Accident-free rate\*\* is high across all models, with \*\*Model 3 and Y\*\* being the safest (>90%).
-
-
-
-\---
-
-
-
-\### Recommendations  
-
-
-
-\#### 1. 🎯 Target High-Volume States  
-
-Focus marketing and resale efforts in states like \*\*NY, OH, NC, VA\*\*, which show high vehicle turnover and mileage demand.
-
-
-
-\#### 2. 💼 Price Based on DAS  
-
-Use \*\*Driver Assist System tiers\*\* as a pricing lever.  
-
-> Full Self-Driving variants command significantly higher average prices (up to \*\*$63.2K\*\*).
-
-
-
-\#### 3. 📉 Promote Lower EMI Models  
-
-\*\*Model Y and Model 3\*\* with lower EMIs may be ideal for entry-level EV buyers or fleet purchases.
-
-
-
-\#### 4. 🔍 Expand Dataset for Model Y \& Cybertruck  
-
-As newer models, their datasets will grow. Monitoring pricing trends can help forecast \*\*depreciation\*\* and \*\*resale value\*\*.
-
-
-
-\---
-
-
-
-
+---
 
