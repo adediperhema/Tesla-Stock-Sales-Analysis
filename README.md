@@ -116,10 +116,12 @@ Each Tesla model has a dedicated dashboard featuring the following key visuals:
 <img width="1247" height="737" alt="Tesla Sales Image 2" src="https://github.com/user-attachments/assets/88be3677-d477-4e37-84d0-864442a7ec7e" />
 
 
-<img width="1247" height="737" alt="Tesla Sales Image 3" src="https://github.com/user-attachments/assets/023327cb-e454-488d-8599-e9556f857510" />
+<img width="1250" height="737" alt="Tesla Sales Image 3" src="https://github.com/user-attachments/assets/82064e12-0d60-40ff-8c2b-f167afbdae39" />
 
 
-<img width="1247" height="736" alt="Tesla Sales Image 4" src="https://github.com/user-attachments/assets/008ac1f6-46fb-477b-a4d6-8788e479cfcf" />
+
+<img width="1242" height="732" alt="Tesla Sales Image 4" src="https://github.com/user-attachments/assets/df2e5f97-8962-483a-9fa1-3426d8295d13" />
+
 
 
 <img width="1251" height="735" alt="Tesla Sales Image 5" src="https://github.com/user-attachments/assets/4b2890ac-4e7c-405f-8466-7c9cb4dbc7c5" />
